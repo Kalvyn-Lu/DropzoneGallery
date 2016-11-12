@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import Dropzone from 'react-dropzone';
+import html2canvas from 'html2canvas';
 
 
 var imageList = [];
@@ -45,6 +46,14 @@ class DropzoneGallery extends React.Component {
     
     reader.readAsDataURL(file);
   }
+  
+  renderCanvas() {
+    html2canvas(document.getElementById('images'), {
+    onrendered: function(canvas) {
+      document.body.appendChild(canvas);
+    }
+    });
+  }
 
   render () {
     return (
@@ -53,7 +62,11 @@ class DropzoneGallery extends React.Component {
             <div className='drop-zone-text'>Try dropping some files here, or click to select files to upload.</div>
           </Dropzone>
           
-          <div>
+          <button type="button" onClick={this.renderCanvas}>Generate Spritesheet</button>
+          
+          <div className="image-list" id="images" style={{
+            display: 'table'
+          }}>
             {this.state.list}
           </div>
         </div>
