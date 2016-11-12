@@ -50,7 +50,7 @@ class DropzoneGallery extends React.Component {
   renderCanvas() {
     html2canvas(document.getElementById('images'), {
       onrendered: function(canvas) {
-        document.body.appendChild(canvas);
+        document.getElementById('spritesheet-wrapper').appendChild(canvas);
       }
     });
   }
@@ -64,10 +64,12 @@ class DropzoneGallery extends React.Component {
           
           <button type="button" onClick={this.renderCanvas}>Generate Spritesheet</button>
           
-          <div className="image-list" id="images" style={{
-            display: 'table'
-          }}>
+          <div className="image-list" id="images">
             {this.state.list}
+          </div>
+          
+          <div id="spritesheet-wrapper">
+            Generated Spritesheets:
           </div>
         </div>
     );
