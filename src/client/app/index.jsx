@@ -3,11 +3,9 @@ import {render} from 'react-dom';
 import Dropzone from 'react-dropzone';
 import html2canvas from 'html2canvas';
 
-
 var imageList = [];
 
 class DropzoneGallery extends React.Component {
-  
   constructor() {
     super();
     this.state = {
@@ -23,21 +21,23 @@ class DropzoneGallery extends React.Component {
       console.log('uploaded an invalid file');
       return ;
     }
+    
+    let count = 0;
+    
     imageList = [];
     
     acceptedFiles.forEach((file) => {
-      this.renderImage(file);
+      this.renderImage(file, count++);
     });
     
     this.setState({list: imageList});
   }
   
-  renderImage(file) {
+  renderImage(file,key) {
     var reader = new FileReader();
   
     reader.onload = function(event) {
-       imageList.push(<img src={event.target.result}/>);
-       
+       imageList.push(<img src={event.target.result} key={key} title={file.name}/>);
        //do this some other way. is bad hack
        this.setState({list: imageList})
     }
@@ -49,9 +49,9 @@ class DropzoneGallery extends React.Component {
   
   renderCanvas() {
     html2canvas(document.getElementById('images'), {
-    onrendered: function(canvas) {
-      document.body.appendChild(canvas);
-    }
+      onrendered: function(canvas) {
+        document.body.appendChild(canvas);
+      }
     });
   }
 
@@ -73,6 +73,7 @@ class DropzoneGallery extends React.Component {
     );
   }
 }
+
 
 
 render(<DropzoneGallery/>, document.getElementById('app'));
