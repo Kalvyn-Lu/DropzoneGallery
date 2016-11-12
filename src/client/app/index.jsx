@@ -62,14 +62,14 @@ class DropzoneGallery extends React.Component {
             <div className='drop-zone-text'>Try dropping some files here, or click to select files to upload.</div>
           </Dropzone>
           
-          <button type="button" onClick={this.renderCanvas}>Generate Spritesheet</button>
+          <button type="button" onClick={this.renderCanvas}>Generate Image Sheet</button>
           
           <div className="image-list" id="images">
             {this.state.list}
           </div>
           
           <div id="spritesheet-wrapper">
-            Generated Spritesheets:
+            Generated Image Sheets:
           </div>
         </div>
     );
