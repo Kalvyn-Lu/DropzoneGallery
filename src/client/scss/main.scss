@@ -1,0 +1,13 @@
+.drop-zone {
+    background-color: lightblue;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    border-style: dotted;
+    
+    .drop-zone-text {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+}
