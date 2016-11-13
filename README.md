@@ -8,7 +8,7 @@ Simple app made to generate image/sprite sheets quickly
 ##Setup
 1. `npm install`
 2. `npm run build` `npm run build-sass`
-3. Open `src/client/index.html` to launch app.
+3. Open `index.html` to launch app.
 
 ##Usage
 1. Drag image onto light blue dropzone.
