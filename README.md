@@ -1,6 +1,6 @@
 #DropzoneGallery
 Simple app made to generate image/sprite sheets quickly
-[Demo](https://kalvyn-lu.github.io/dropzonegallery)
+* [Demo](https://kalvyn-lu.github.io/DropzoneGallery/)
 
 ##Tools
 * ES6 and React for app
