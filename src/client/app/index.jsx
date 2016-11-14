@@ -9,11 +9,13 @@ class DropzoneGallery extends React.Component {
   constructor() {
     super();
     this.state = {
-      list: []
+      list: [],
+      rowSize: 1
     }
     
     this.onDrop = this.onDrop.bind(this);
     this.renderImage = this.renderImage.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
   
   onDrop(acceptedFiles, rejectedFiles) {
@@ -37,7 +39,7 @@ class DropzoneGallery extends React.Component {
     var reader = new FileReader();
   
     reader.onload = function(event) {
-       imageList.push(<img src={event.target.result} key={key} title={file.name}/>);
+       imageList.push(<img src={event.target.result} id={key} key={key} title={file.name}/>);
        //do this some other way. is bad hack
        this.setState({list: imageList})
     }
@@ -54,6 +56,10 @@ class DropzoneGallery extends React.Component {
       }
     });
   }
+  
+  handleChange(event) {
+    this.setState({rowSize: event.target.value});
+  }
 
   render () {
     return (
@@ -64,7 +70,11 @@ class DropzoneGallery extends React.Component {
           
           <button type="button" onClick={this.renderCanvas}>Generate Image Sheet</button>
           
-          <div className="image-list" id="images">
+          <span> Row Size: </span>
+          
+          <input type='text' onChange={this.handleChange} />
+          
+          <div className="image-list" id="images" style={{width: document.getElementById(0) ? document.getElementById(0).offsetWidth * this.state.rowSize : 0}}>
             {this.state.list}
           </div>
           
