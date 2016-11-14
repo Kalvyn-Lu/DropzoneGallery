@@ -66,7 +66,6 @@ class DropzoneGallery extends React.Component {
     for(let i = 0; i < this.state.rowSize; i++) {
       if(document.getElementById(i) == null) break;
       imageWidth += document.getElementById(i).offsetWidth;
-      console.log(imageWidth);
     }
     return (
         <div>
