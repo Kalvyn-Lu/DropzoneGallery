@@ -17,5 +17,8 @@ Simple app made to generate image/sprite sheets quickly
 2. If images appear, files are valid. Click "Generate Image Sheet" button
 3. Image sheet should appear under "Generated Image Sheets:" text. Should be a single image
 
+##TODO
+* Change layout to be more user friendly and visually appealing
+
 ###Example:
 ![Result](https://s14.postimg.org/yb5puynpd/Screenshot_2016_11_12_at_4_02_11_PM.png)"Result"
