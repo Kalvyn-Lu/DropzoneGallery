@@ -5,6 +5,7 @@ Simple app made to generate image/sprite sheets quickly
 ##Tools
 * ES6 and React for app
 * [html2canvas](https://www.npmjs.com/package/html2canvas) to generate image sheets
+* [react-dropzone](https://github.com/okonet/react-dropzone) dropzone component
 
 
 ##Setup
