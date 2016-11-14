@@ -24,11 +24,13 @@ class DropzoneGallery extends React.Component {
       return ;
     }
     
+    let sortedFiles = acceptedFiles.sort(this.fileNameComparator);
+    
     let count = 0;
     
     imageList = [];
     
-    acceptedFiles.forEach((file) => {
+    sortedFiles.forEach((file) => {
       this.renderImage(file, count++);
     });
     
@@ -59,6 +61,14 @@ class DropzoneGallery extends React.Component {
   
   handleChange(event) {
     this.setState({rowSize: event.target.value});
+  }
+  
+  fileNameComparator(fileA, fileB) {
+    if(fileA.name == fileB.name) {
+      return 0;
+    }
+    
+    return fileA.name > fileB.name ? 1 : -1;
   }
 
   render () {
