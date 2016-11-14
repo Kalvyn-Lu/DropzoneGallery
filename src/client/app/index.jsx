@@ -89,6 +89,8 @@ class DropzoneGallery extends React.Component {
           
           <input type='text' onChange={this.handleChange} />
           
+          <h2>Preview</h2>
+          
           <div className="image-list" id="images" style={{width: imageWidth}}>
             {this.state.list}
           </div>
