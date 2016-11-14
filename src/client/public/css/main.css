@@ -9,5 +9,5 @@
     top: 50%;
     transform: translateY(-50%); }
 
-.spritesheet-header {
-  width: 100%; }
+.rowsize-input, .button-container, .preview-text {
+  text-align: center; }

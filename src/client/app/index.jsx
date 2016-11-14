@@ -54,7 +54,7 @@ class DropzoneGallery extends React.Component {
   renderCanvas() {
     html2canvas(document.getElementById('images'), {
       onrendered: function(canvas) {
-        document.getElementById('spritesheet-wrapper').appendChild(canvas);
+        window.open(canvas.toDataURL('image/png'));
       }
     });
   }
@@ -83,22 +83,18 @@ class DropzoneGallery extends React.Component {
             <div className='drop-zone-text'>Try dropping some images here, or click to select files to upload.</div>
           </Dropzone>
           
-          <button type="button" onClick={this.renderCanvas}>Generate Image Sheet</button>
+          <div className='rowsize-input'>
+            <span> Row Size: </span>
+            <input type='text' onChange={this.handleChange} />
+          </div>
           
-          <span> Row Size: </span>
+          <div className='button-container'><button type="button" onClick={this.renderCanvas}>Generate Image Sheet</button></div>
           
-          <input type='text' onChange={this.handleChange} />
-          
-          <h2>Preview</h2>
+          <h3 className='preview-text'>Preview</h3>
           
           <div className="image-list" id="images" style={{width: imageWidth}}>
             {this.state.list}
           </div>
-          
-          <div id="spritesheet-wrapper">
-            <h2 className='spritesheet-header'> Generated Image Sheets </h2>
-          </div>
-          
         </div>
     );
   }
