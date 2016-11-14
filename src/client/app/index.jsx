@@ -62,6 +62,12 @@ class DropzoneGallery extends React.Component {
   }
 
   render () {
+    let imageWidth = 0;
+    for(let i = 0; i < this.state.rowSize; i++) {
+      if(document.getElementById(i) == null) break;
+      imageWidth += document.getElementById(i).offsetWidth;
+      console.log(imageWidth);
+    }
     return (
         <div>
           <Dropzone className='drop-zone' onDrop={this.onDrop} accept='image/*'>
@@ -74,7 +80,7 @@ class DropzoneGallery extends React.Component {
           
           <input type='text' onChange={this.handleChange} />
           
-          <div className="image-list" id="images" style={{width: document.getElementById(0) ? document.getElementById(0).offsetWidth * this.state.rowSize : 0}}>
+          <div className="image-list" id="images" style={{width: imageWidth}}>
             {this.state.list}
           </div>
           
