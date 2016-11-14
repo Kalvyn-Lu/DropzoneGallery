@@ -94,8 +94,9 @@ class DropzoneGallery extends React.Component {
           </div>
           
           <div id="spritesheet-wrapper">
-            <div className='spritesheet-header'> Generated Image Sheets: </div>
+            <h2 className='spritesheet-header'> Generated Image Sheets </h2>
           </div>
+          
         </div>
     );
   }
