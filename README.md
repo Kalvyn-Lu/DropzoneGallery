@@ -14,11 +14,12 @@ Simple app made to generate image/sprite sheets quickly
 
 ##Usage
 1. Drag image onto light blue dropzone.
-2. If images appear, files are valid. Click "Generate Image Sheet" button
-3. Image sheet should appear under "Generated Image Sheets:" text. Should be a single image
+2. Change number of images per row using the "Row Size" input
+2. If images appear, files are valid. Click "Generate Image Sheet" button.
+3. New tab should open with generated image.
 
 ##TODO
 * Change layout to be more user friendly and visually appealing
 
 ###Example:
-![Result](https://s14.postimg.org/yb5puynpd/Screenshot_2016_11_12_at_4_02_11_PM.png)"Result"
+![Result](https://s17.postimg.org/52ahgnez3/Screenshot_2016_11_14_at_1_23_49_AM.png)"Result"
